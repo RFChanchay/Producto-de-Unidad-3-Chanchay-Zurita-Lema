@@ -51,11 +51,13 @@ class Auto():
     ruedas=4
     
 Para definir un método lo hacemos igual como lo hacemos con una función con la palabra por defecto def y el nombre de dicho método pero para diferenciar un método de una función lo hacemos escribiendo dentro de sus paréntesis el parámetro self:
+
 def desplazamiento(self):
 
     pass
     
 La palabra self hace referencia a los objetos que pertenezcan a la clase y la palabra pass que colocamos dentro del método le indica a el intérprete de python que todavía no le hemos definido ningún funcionamiento a ese método.
+
 Cuando tenemos nuestra clase lista ya podemos empezar a crear objetos que pertenezcan a esa clase, para crear objetos lo hacemos de la siguiente manera:
 
 miVehiculo=Auto()
@@ -70,12 +72,18 @@ miObjeto.metodo()
  
  
 Constructor __init__()
+
 El método __init__() es un método especial, el cual se ejecuta al momento de instanciar un objeto. El comportamiento de __init__() es muy similar a los “constructores” en otros lenguajes. Los argumentos que se utilizan en la definición de __init__() corresponden a los parámetros que se deben ingresar al instanciar un objeto.
+
    def __init__(self, cedula, nombre, apellido, sexo):
+   
         """Constructor de clase Persona"""
         self.cedula = cedula
+	
         self.nombre = nombre
+	
         self.apellido = apellido
+	
         self.sexo = sexo
 
 ## 5. Diagramas
@@ -86,11 +94,11 @@ General Purpose Input Output (GPIO) es un sistema de entrada y salida de propós
 En el siguiente esquema tenemos un raspberry pi y como lo conectaremos con respecto a los componentes electrónicos, enviando señales con interruptores y mostrando la información de salida con un bit representado con un diodo led.
 Se usará un solo circuito ya que mediante programación el usuario seleccionara como desea que funcione el sistema ya sea como alarma de incendios o como un sistema de riego.
 
-![](img/00.png)
+![](img/5.png)
 
 Para la programación y funcionamiento lo haremos usando la lógica booleana utilizando mapas de verdad que para el caso del sistema de riego el diagrama real es el siguiente:
 
-![](img/00.png)
+![](img/6.png)
 
 La tabla de verdad para este circuito es el siguiente:
 A: Sensor de Humedad
@@ -99,19 +107,23 @@ C: Circuito Calendario
 D: Célula Fotoeléctrica
 Y: Salida
 
-![](img/00.png)
+![](img/7.png)
 
 Para la alarma las condiciones y tabla de verdad son las siguientes:
 
 Para ello se tiene un sensor de gases (G), un sensor de humos (H), y dos señales procedentes de un termómetro que indican si la temperatura es mayor de 45ºC (T45) y si la temperatura es mayor de 60ºC (T60).
 
 T60:A'1' si la temperatura es superior a 60ºC
+
 T45:B '1' si la temperatura es superior a 45ºC
+
 Sensor de humos :C '1' si se detecta HUMO.
+
 Sensor de Gases : D ''1' si se detecta GAS resultante de la combustión.
+
 Salida: Y La señal de salida A (alarma) se activará a nivel alto.
 
-![](img/00.png)
+![](img/8.png)
 
 ## 6. Lista de Componentes
 **Circuito Lógico Raspberry:**
@@ -126,11 +138,11 @@ Salida: Y La señal de salida A (alarma) se activará a nivel alto.
 ## 7. Mapa de Variables
 Programa General
 
-![](img/00.png)
+![](img/9.png)
 
 Para cada función describiremos de forma general sus variables
 
-![](img/00.png)
+![](img/10.png)
 
 ## 8. Explicacion de codigo fuente
 ```
@@ -551,46 +563,50 @@ elif sele==1:#CASO PARA LA ALARMA
 Al ser una práctica simulada no se necesita pre requisitos únicamente importar nuestra librería de gpio en el simulador.
 
 ## 10. Aportaciones
-Como aportación se ha procedido a realizar de manera física un circuito con el  cual podamos demostrar las diferentes funciones que se realizaron en el program.
+Como aportación se ha procedido a realizar de manera física un circuito con el  cual podamos demostrar las diferentes funciones que se realizaron en el programa.
 
-![](img/00.png)
+![](img/11.png)
 
 En esta parte procedemos a correr el programa en la raspberry pi 
 
-![](img/00.png)
-![](img/00.png)
+![](img/12.png)
+![](img/13.png)
 Y procedemos controlar mediante el switch las diferente variables si se encuentran en alto o en bajo las cuales corresponden a su respectivo pin del gpio de la raspberry pi y controlan diferentes funciones del programa.
 
 **Controlar Raspberry Pi mediante VNC Viewer**
 
 Primero debemos activar en las configuraciones de la raspberry pi el vnc 
 
-![](img/00.png)
+![](img/14.png)
 
 después procedemos a activar el modo automático de login
 
-![](img/00.png)
+![](img/15.png)
 
 Debemos tener una conexión a internet y también debemos descargar el vnc viewer para la plataforma la cual estemos usando https://www.realvnc.com/es/connect/download/viewer/
 
-![](img/00.png)
+![](img/16.png)
 
 procedemos a ingresar dentro de vnc y conectarnos a la raspberry con la ip que se encuentre en la red
 
-![](img/00.png)
+![](img/17.png)
 
 cuando nos estemos conectando tenemos que usar las siguientes credenciales
 
-![](img/00.png)
+![](img/18.png)
 
 y ya ingresaron desde la pc a la raspberry
 
-![](img/00.png)
+![](img/19.png)
 ## 11. Recomendaciones
 - Para implementar el circuito en un armado real, armar el circuito sin alimentar el raspberry.
 - Considerar los pines de gpio que permitan el trabajo exclusivo de entrada o salida, evitando el uso de pines como el i2c o uart.
 - Si el funcionamiento de cada programa es parecido implementar las mismas funciones para cada clase.
 ## 12. Cronograma
+
+
+![](img/20.png)
+
 ## 13. Bibliografía
 Agbeyangi, A. O., Alashiri, O. A., & Otunuga, A. E. (2020). Automatic Identification of Vehicle Plate Number using Raspberry Pi. 2020 International Conference in Mathematics, Computer Engineering and Computer Science (ICMCECS). doi:10.1109/icmcecs47690.2020.246983
 
@@ -602,22 +618,22 @@ Kodali, R. K., & Anjum, A. (2018). IoT Based HOME AUTOMATION Using Node-RED. 201
 Manual de usuario
 Debemos crear un proyecto en https://create.withcode.uk/
 
-![](img/00.png)
+![](img/21.png)
 
 Entonces debemos copiar y pegar el código anteriormente mostrado.
 
-![](img/00.png)
+![](img/22.png)
 
 Para verificar su funcionamiento debemos darle play en la esquina inferior derecha
 
-![](img/00.png)
+![](img/23.png)
 
 Se nos mostrarán los pines gpio los cuales son representados los cuadrados como entradas y los círculos como salidas.
 El funcionamiento del programa es el siguiente:
 Primero se nos mostrará un mensaje de inicio con un conteo regresivo en la consola para seleccionar el modo de funcionamiento en el pin 19.
 Donde 1 será para la alarma y 0 para la bomba de agua.
 
-![](img/00.png)
+![](img/24.png)
 
 Bomba de agua 
 Los pines y sensores están distribuidos de la siguiente forma:
@@ -629,7 +645,7 @@ Los pines y sensores están distribuidos de la siguiente forma:
 
 Si el circuito detecta un cambio se mostrará la información en la consola y dependiendo del caso la salida cambiará de estado.
 
-![](img/00.png)
+![](img/25.png)
 
 Bomba de agua 
 Los pines y sensores están distribuidos de la siguiente forma:
@@ -641,6 +657,6 @@ Los pines y sensores están distribuidos de la siguiente forma:
 
 Si el circuito detecta un cambio se mostrará la información en la consola y dependiendo del caso la salida cambiará de estado.
 
-![](img/00.png)
+![](img/26.png)
 
 El programa se ejecutará infinitamente hasta que se cierre la aplicación.
