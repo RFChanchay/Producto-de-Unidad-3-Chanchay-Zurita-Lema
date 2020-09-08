@@ -638,9 +638,13 @@ Donde 1 será para la alarma y 0 para la bomba de agua.
 Bomba de agua 
 Los pines y sensores están distribuidos de la siguiente forma:
 7: Luz
+
 11: Calendario
+
 13: Depósito de agua
+
 15: Humedad
+
 19: Salida de Bomba
 
 Si el circuito detecta un cambio se mostrará la información en la consola y dependiendo del caso la salida cambiará de estado.
@@ -649,10 +653,15 @@ Si el circuito detecta un cambio se mostrará la información en la consola y de
 
 Bomba de agua 
 Los pines y sensores están distribuidos de la siguiente forma:
+
 7: Gases
+
 11: Humo
+
 13: Temperatura de 45 grados
+
 15: Temperatura de 60 grados
+
 19: Salida de Alarma
 
 Si el circuito detecta un cambio se mostrará la información en la consola y dependiendo del caso la salida cambiará de estado.
