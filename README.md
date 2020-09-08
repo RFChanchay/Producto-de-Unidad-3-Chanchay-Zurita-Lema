@@ -598,23 +598,27 @@ cuando nos estemos conectando tenemos que usar las siguientes credenciales
 y ya ingresaron desde la pc a la raspberry
 
 ![](img/19.png)
-## 11. Recomendaciones
+## 11. Conclusiones
+Una vez finalizado el proyecto podemos concluir que gracias a la ayuda de la Raspberry Pi y de un buen conocimiento de programación en Python se puede generar resultados increíbles, en este caso se alcanzó los objetivos planteados ya que mediante POO y lógica booleana en el código, se pudo desarrollar un control de sistemas de automatización que funciona a la perfección. 
+Y con esto no solo pudimos demostrar su utilidad, sino que también pudimos evidenciar el potencial de estos sistemas y lo que se podría  hacer con métodos similares.
+
+## 12. Recomendaciones
 - Para implementar el circuito en un armado real, armar el circuito sin alimentar el raspberry.
 - Considerar los pines de gpio que permitan el trabajo exclusivo de entrada o salida, evitando el uso de pines como el i2c o uart.
 - Si el funcionamiento de cada programa es parecido implementar las mismas funciones para cada clase.
-## 12. Cronograma
+## 13. Cronograma
 
 
 ![](img/20.png)
 
-## 13. Bibliografía
+## 14. Bibliografía
 Agbeyangi, A. O., Alashiri, O. A., & Otunuga, A. E. (2020). Automatic Identification of Vehicle Plate Number using Raspberry Pi. 2020 International Conference in Mathematics, Computer Engineering and Computer Science (ICMCECS). doi:10.1109/icmcecs47690.2020.246983
 
 Calvopinna, A., Tapia, F., & Tello-Oquendo, L. (2019). Weather monitoring architecture for smart home using alexa, raspberry Pi, and DarkSky API. 2019 8th International Conference on Software Process Improvement, CIMPS 2019 - Applications in Software Engineering. https://doi.org/10.1109/CIMPS49236.2019.9082423
 
 Kodali, R. K., & Anjum, A. (2018). IoT Based HOME AUTOMATION Using Node-RED. 2018 Second International Conference on Green Computing and Internet of Things (ICGCIoT). doi:10.1109/icgciot.2018.8753085
 
-## 14. Anexos
+## 15. Anexos
 Manual de usuario
 Debemos crear un proyecto en https://create.withcode.uk/
 
