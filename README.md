@@ -1,6 +1,6 @@
 # Producto-de-Unidad-3-Chanchay-Zurita-Lema
 ## 1. Planteamiento del problema
-
+Mediante la Proogramacion orientada a objetos (POO) resolver 2 problemas propuestos para raspberry pi
 ## 2. Objetivos
  - **General:**
   - Desarrollar un programa que permita el control de sistemas de automatización mediante el uso de raspberry pi.
@@ -17,9 +17,71 @@ En relación al producto de unidad los anteriores artículos se ven relacionados
 
 ## 4. Marco Teórico
 
+Para el presente proyecto lo que necesitamos saber como pilar fundamental es la GPIO de la Raspberry Pi, debido a que será de gran utilidad al momento de escribir nuestro código y al ayudarnos de nuestra Raspberry Pi.
+
+**¿Que es GPIO?**
+
+General Purpose Input Output (GPIO) es un sistema de entrada y salida de propósito general, es decir, consta de una serie de pines o conexiones que se pueden usar como entradas o salidas para múltiples usos. Estos pines están incluidos en todos los modelos de Raspberry Pi con leves  diferencias.
+
+![](img/4.png)
+
+- Amarillo (2): Alimentación a 3.3V.
+- Rojo (2): Alimentación a 5V.
+- Naranja (26): Entradas / salidas de proposito general. Pueden configurarse como entradas o salidas. Ten presente que el nivel --alto es de 3.3V y no son tolerantes a tensiones de 5V.
+- Gris (2): Reservados.
+- Negro (8): Conexión a GND o masa.
+- Azul (2): Comunicación mediante el protocolo I2C para comunicarse con periféricos que siguen este protocolo.
+- Verde (2): Destinados a conexión para UART para puerto serie convencional.
+- Morado (5): Comunicación mediante el protocolo SPI para comunicarse con periféricos que siguen este protocolo.
+
+Aparte de los conocimientos básicos de la GPIO se debe tomar en cuenta la programación orientada a objetos en el lenguaje que vayamos a utilizar, en este caso en específico usaremos Python por lo cual podemos repasar los fundamentos.
+
+**POO en python**
+
+En python la POO se expresa de manera simple y fácil de escribir pero debes tener en cuenta que para programar debes entender cómo funciona la teoría de POO y aplicarla al código.
+
+La teoría de la POO nos dice que todos los objetos deben pertenecer a una clase, ya que esta es la base para diferenciarse unos de otros teniendo atributos y comportamientos que los distingan de otros objetos que pertenezcan a otras clases, para crear clases en python lo hacemos de la siguiente manera:
+
+class Auto():
+
+Para definir un atributo simplemente creamos una variable con total normalidad y un valor cualquiera por dar:
+
+class Auto():
+
+    ruedas=4
+    
+Para definir un método lo hacemos igual como lo hacemos con una función con la palabra por defecto def y el nombre de dicho método pero para diferenciar un método de una función lo hacemos escribiendo dentro de sus paréntesis el parámetro self:
+def desplazamiento(self):
+
+    pass
+    
+La palabra self hace referencia a los objetos que pertenezcan a la clase y la palabra pass que colocamos dentro del método le indica a el intérprete de python que todavía no le hemos definido ningún funcionamiento a ese método.
+Cuando tenemos nuestra clase lista ya podemos empezar a crear objetos que pertenezcan a esa clase, para crear objetos lo hacemos de la siguiente manera:
+
+miVehiculo=Auto()
+
+Para mostrar atributos:
+
+miObjeto.atributo
+
+Para mostrar métodos:
+
+miObjeto.metodo()
+ 
+ 
+Constructor __init__()
+El método __init__() es un método especial, el cual se ejecuta al momento de instanciar un objeto. El comportamiento de __init__() es muy similar a los “constructores” en otros lenguajes. Los argumentos que se utilizan en la definición de __init__() corresponden a los parámetros que se deben ingresar al instanciar un objeto.
+   def __init__(self, cedula, nombre, apellido, sexo):
+        """Constructor de clase Persona"""
+        self.cedula = cedula
+        self.nombre = nombre
+        self.apellido = apellido
+        self.sexo = sexo
 
 ## 5. Diagramas
 **Circuito Lógico Raspberry**
+
+General Purpose Input Output (GPIO) es un sistema de entrada y salida de propósito general, es decir, consta de una serie de pines o conexiones que se pueden usar como entradas o salidas para múltiples usos. Estos pines están incluidos en todos los modelos de Raspberry Pi con leves  diferencias.
 
 En el siguiente esquema tenemos un raspberry pi y como lo conectaremos con respecto a los componentes electrónicos, enviando señales con interruptores y mostrando la información de salida con un bit representado con un diodo led.
 Se usará un solo circuito ya que mediante programación el usuario seleccionara como desea que funcione el sistema ya sea como alarma de incendios o como un sistema de riego.
@@ -489,6 +551,41 @@ elif sele==1:#CASO PARA LA ALARMA
 Al ser una práctica simulada no se necesita pre requisitos únicamente importar nuestra librería de gpio en el simulador.
 
 ## 10. Aportaciones
+Como aportación se ha procedido a realizar de manera física un circuito con el  cual podamos demostrar las diferentes funciones que se realizaron en el program.
+
+![](img/00.png)
+
+En esta parte procedemos a correr el programa en la raspberry pi 
+
+![](img/00.png)
+![](img/00.png)
+Y procedemos controlar mediante el switch las diferente variables si se encuentran en alto o en bajo las cuales corresponden a su respectivo pin del gpio de la raspberry pi y controlan diferentes funciones del programa.
+
+**Controlar Raspberry Pi mediante VNC Viewer**
+
+Primero debemos activar en las configuraciones de la raspberry pi el vnc 
+
+![](img/00.png)
+
+después procedemos a activar el modo automático de login
+
+![](img/00.png)
+
+Debemos tener una conexión a internet y también debemos descargar el vnc viewer para la plataforma la cual estemos usando https://www.realvnc.com/es/connect/download/viewer/
+
+![](img/00.png)
+
+procedemos a ingresar dentro de vnc y conectarnos a la raspberry con la ip que se encuentre en la red
+
+![](img/00.png)
+
+cuando nos estemos conectando tenemos que usar las siguientes credenciales
+
+![](img/00.png)
+
+y ya ingresaron desde la pc a la raspberry
+
+![](img/00.png)
 ## 11. Recomendaciones
 - Para implementar el circuito en un armado real, armar el circuito sin alimentar el raspberry.
 - Considerar los pines de gpio que permitan el trabajo exclusivo de entrada o salida, evitando el uso de pines como el i2c o uart.
